@@ -1,5 +1,5 @@
 {
-  "name": "herokutest",
+  "name": "book_review",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

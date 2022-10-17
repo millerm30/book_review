@@ -6,16 +6,16 @@ import Delete from './components/Delete';
 import uuid from 'react-uuid';
 
 const App = () => {
-  const [reviews, setRewviews] = useState([]);
+  const [reviews, setReviews] = useState([]);
 
   const getAllReviews = () => {
     axios
       .get('http://localhost:3030/reviews')
       .then((res) => {
-        setRewviews(res.data);
+        setReviews(res.data);
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        console.log(error);
       });
   };
 
@@ -25,7 +25,7 @@ const App = () => {
 
   return (
     <div>
-      <Add reviews={reviews} setReviews={setRewviews} />
+      <Add reviews={reviews} setReviews={setReviews} />
       {!reviews.length ? (
         <h1 className="text-center text-2xl font-bold mt-6">No reviews added!</h1>
       ) : (
@@ -38,7 +38,7 @@ const App = () => {
               <Delete
                 review={review}
                 reviews={reviews}
-                setReviews={setRewviews}
+                setReviews={setReviews}
                 id={review.id}
               />
               <div className="px-6 py-4">
@@ -56,7 +56,7 @@ const App = () => {
                 <Edit
                   review={review}
                   reviews={reviews}
-                  setReviews={setRewviews}
+                  setReviews={setReviews}
                   id={review.id}
                 />
               </div>

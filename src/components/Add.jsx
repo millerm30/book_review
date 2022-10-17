@@ -5,13 +5,6 @@ export default function Add(props) {
 
   const { register, handleSubmit, reset } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    addReview(data);
-    reset();
-    window.location.reload();   
-  };
-
   const addReview = (data) => {
     const newReview = {
       book_title: data.book_title,
@@ -27,6 +20,13 @@ export default function Add(props) {
       .catch((error) => {
         console.log(error);
       });
+  };
+
+  const onSubmit = (data) => {
+    console.log(data);
+    addReview(data);
+    reset();
+    window.location.reload();   
   };
       
   return (
